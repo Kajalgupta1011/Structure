@@ -1,11 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Property Name ABC</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <style>
+        .propertyBanner {
+            /* background-image: url('https://placehold.co/1920x1080'); */
+            background-image: url('assets/PropertBanner-img.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            height: calc(50vh + 100px);
+            position: relative;
+        }
+        .propertyBanner:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .property_banner_content {
+            text-align: center;
+            transform: translateY(30px);
+            z-index: 2;
+        }
+
+        .property_wrapper {
+            /* padding: 20px; */
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            /* background-color: gray; */
+            padding-top: 40px;
+            padding-bottom: 60px;
+        }
+        .property_wrapper h2{
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #007bff;
+        }
+        
+        .main-image {
+            width: 100%;
+            /* height: 500px; */
+            aspect-ratio: 3 / 2;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .thumbnail-container {
+            display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+        }
+
+        .thumbnail {
+            aspect-ratio: 3 / 2;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: transform 0.2s, opacity 0.2s;
+            border: 2px solid transparent;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .thumbnail.active {
+            border-color: #007bff;
+            transform: scale(1.05);
+        }
+        .innerContentWrapper{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 70px;
+        }
+        .popertyContent_Card h3{
+            margin-bottom: 20px;
+        }
+
+            .popertyContent_Card {
+        /* border: 1px solid #e0e0e0; */
+        border-radius: 15px;
+        padding: 0px 40px 40px 40px;
+        background-color: white;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    .propertDetails i{
+        color: #007bff;
+        
+    }
+    .global-blue-btn i{
+        color: white;
+        padding-right: 8px;
+    }
+    .propertDetails a:not(.global-blue-btn){
+        color: #0c0c1d;
+        text-decoration: none;
+    }
+    .propertDetails a:not(.global-blue-btn):hover{
+        color: #007bff;
+    }
+    @media (max-width: 767px) {
+        .property_wrapper, .innerContentWrapper {
+            grid-template-columns: 1fr;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1024px) {
+        
+    }
+    </style>
+    <body>
+    <header class="header main-container">
+        <nav class="navbar">
+            <div class="nav-inner-section container">
+                <a href="/" class="logo">
+                    <img src="assets/9Universe_Logo.png" alt="9Universe Logo">
+                </a>
+
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Properties</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a target="_blank" href="tel:9082717103" class="nav-link"><i class="fa-solid fa-phone" style="color: #3498db;"></i> 9082717103</a>
+                    </li>
+                </ul>
+                <button class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+        <section class="main-container propertyBanner">
+            <div class="property_banner_content">
+                <h1>
+                    Property Name ABC
+                </h1>
+            </div>
+
+        </section>
+        <section class="property_wrapper container">
+            <div class="">
+                <div class="gallery-container">
+                    <img src="assets/Property01.jpg" alt="Main product image" class="main-image" id="mainImage">
+                    
+                    <div class="thumbnail-container">
+                        <img src="assets/Property01.jpg" alt="Thumbnail 1" class="thumbnail active">
+                        <img src="assets/Property02.jpg" alt="Thumbnail 2" class="thumbnail">
+                        <img src="assets/Property03.jpg" alt="Thumbnail 3" class="thumbnail">
+                        <img src="assets/Property04.jpg" alt="Thumbnail 4" class="thumbnail">
+                    </div>
+                </div>
+            </div>
+            <div class="propertDetails">
+                <h2><i class="fa-solid fa-building"></i> Property Name ABC</h2>
+                <p>All details</p>
+                <p><i class="fa-solid fa-location-dot"></i> <a href="#">Location</a></p>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:1234567895">1234567891</a></p>
+                <div><a class="global-blue-btn" href="#"><i class="fa-regular fa-circle-down"></i>Download File</a>
+                </div>
+            </div>  
+        </section>
+        <section class="propert_inner_content">
+            
+            <div class="container">
+                <!-- <h3 class="">Property Details:</h3>   -->
+                <div class="innerContentWrapper">
+                    <div class="popertyContent_Card">
+                        <h3>Project Hallmaks</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, laudantium!</p>
+                    </div>
+                    <div class="popertyContent_Card">
+                        <h3>Project Details</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, laudantium!</p>
+                    </div>
+                        
+                    </div>
+                </div>              
+            </div>
+        </section>
+        <footer class="main-container footer">
+            <div class="footer container">
+                <div class="footer-box">
+                    <div>
+                        <div class="logo">
+                            <img style="max-width: 150px;" src="assets/9Universe_Logo.png" alt="">
+                        </div>
     
-</body>
+                        <p>
+                            investing in your future one home at a time
+                        </p>
+    
+                        <div class="subscribe">
+                            <form action="">
+                                <input type="text" placeholder="Enter your email">
+                                <button>subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+    
+                    <div>
+                        <h3>quick link</h3>
+                        <ul>
+                            <li><a href="#">home</a></li>
+                            <li><a href="#">rent</a></li>
+                            <li><a href="#">sell</a></li>
+                            <li><a href="#">about</a></li>
+                            <li><a href="#">contact</a></li>
+                        </ul>
+                    </div>
+    
+                    <div>
+                        <h3>about us</h3>
+                        <ul>
+                            <li><a href="#">payment place</a></li>
+                            <li><a href="#">make saving more</a></li>
+                            <li><a href="#">tax calculator</a></li>
+                            <li><a href="#">talk to us</a></li>
+                        </ul>
+                    </div>
+    
+                    <div>
+                        <h3>contact info</h3>
+                        <ul>
+                            <li>123 main streer, apt 4B los angeles, ca 90001, USA</li>
+                            <li>+088(123)456-79-76</li>
+                            <li>contact@company.com</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="copyright">
+                    &copy; 2025 9Universe all rights reserved
+                </div>
+            </div>
+    
+        </footer>
+    </body>
+    <script>
+        const mainImage = document.getElementById('mainImage');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', () => {
+                mainImage.src = thumbnail.src;
+                thumbnails.forEach(t => t.classList.remove('active'));
+                thumbnail.classList.add('active');
+            });
+        });
+    </script>
 </html>
