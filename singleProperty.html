@@ -6,124 +6,10 @@
         <title>Property Name ABC</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="singleProperty.css">
     </head>
     <style>
-        .propertyBanner {
-            /* background-image: url('https://placehold.co/1920x1080'); */
-            background-image: url('assets/PropertBanner-img.png');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            height: calc(50vh + 100px);
-            position: relative;
-        }
-        .propertyBanner:before{
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        .property_banner_content {
-            text-align: center;
-            transform: translateY(30px);
-            z-index: 2;
-        }
-
-        .property_wrapper {
-            /* padding: 20px; */
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            /* background-color: gray; */
-            padding-top: 40px;
-            padding-bottom: 60px;
-        }
-        .property_wrapper h2{
-            margin-top: 0;
-            font-size: 1.5rem;
-            color: #007bff;
-        }
         
-        .main-image {
-            width: 100%;
-            /* height: 500px; */
-            aspect-ratio: 3 / 2;
-            object-fit: cover;
-            cursor: pointer;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-
-        .thumbnail-container {
-            display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 10px;
-        }
-
-        .thumbnail {
-            aspect-ratio: 3 / 2;
-            object-fit: cover;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: transform 0.2s, opacity 0.2s;
-            border: 2px solid transparent;
-        }
-
-        .thumbnail:hover {
-            transform: scale(1.05);
-            opacity: 0.9;
-        }
-
-        .thumbnail.active {
-            border-color: #007bff;
-            transform: scale(1.05);
-        }
-        .innerContentWrapper{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            padding-bottom: 70px;
-        }
-        .popertyContent_Card h3{
-            margin-bottom: 20px;
-        }
-
-            .popertyContent_Card {
-        /* border: 1px solid #e0e0e0; */
-        border-radius: 15px;
-        padding: 0px 40px 40px 40px;
-        background-color: white;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    }
-    .propertDetails i{
-        color: #007bff;
-        
-    }
-    .global-blue-btn i{
-        color: white;
-        padding-right: 8px;
-    }
-    .propertDetails a:not(.global-blue-btn){
-        color: #0c0c1d;
-        text-decoration: none;
-    }
-    .propertDetails a:not(.global-blue-btn):hover{
-        color: #007bff;
-    }
-    @media (max-width: 767px) {
-        .property_wrapper, .innerContentWrapper {
-            grid-template-columns: 1fr;
-        }
-    }
-    @media (min-width: 768px) and (max-width: 1024px) {
-        
-    }
     </style>
     <body>
     <header class="header main-container">
@@ -156,7 +42,7 @@
             </div>
         </nav>
     </header>
-        <section class="main-container propertyBanner">
+        <section class="main-container singlePropertBanner propertyBanner">
             <div class="property_banner_content">
                 <h1>
                     Property Name ABC
